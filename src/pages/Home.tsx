@@ -15,96 +15,79 @@ const Home = () => {
       <PageHero
         image={heroImage}
         title="Château Braha"
-        subtitle="Where Heritage Meets Excellence"
-      >
-        <div className="mt-8 flex gap-4 justify-center">
-          <Link to="/estate">
-            <Button size="lg" className="bg-accent text-accent-foreground hover:bg-accent/90 shadow-elegant">
-              Discover Our Estate
-            </Button>
-          </Link>
-          <Link to="/wines">
-            <Button size="lg" variant="outline" className="border-primary-foreground text-primary-foreground hover:bg-primary-foreground hover:text-primary">
-              Explore Our Wines
-            </Button>
-          </Link>
-        </div>
-      </PageHero>
+        subtitle="A sanctuary of timeless elegance and refined hospitality"
+        overlay={false}
+      />
 
       {/* Welcome Section */}
-      <section className="py-24 px-6">
-        <div className="container mx-auto max-w-4xl text-center">
-          <h2 className="text-5xl mb-8 text-primary">Welcome to Excellence</h2>
-          <p className="text-lg leading-relaxed text-muted-foreground mb-6">
-            Nestled in the prestigious wine region of Bordeaux, Château Braha stands as a testament to centuries of winemaking mastery and refined hospitality. Our estate combines the elegance of classical French architecture with the warmth of genuine hospitality.
+      <section className="py-32 px-6">
+        <div className="container mx-auto max-w-3xl text-center">
+          <p className="text-xl md:text-2xl leading-relaxed text-foreground/80 font-light mb-12">
+            Nestled in the prestigious wine region, Château Braha stands as a testament to centuries 
+            of winemaking mastery and refined hospitality.
           </p>
-          <p className="text-lg leading-relaxed text-muted-foreground">
-            From our award-winning wines to our exceptional dining experiences, every aspect of Château Braha reflects our commitment to excellence and our passion for creating unforgettable moments.
+          <p className="text-lg leading-relaxed text-muted-foreground font-light">
+            From our exceptional wines to our curated experiences, every detail reflects 
+            our commitment to excellence and our passion for creating timeless memories.
           </p>
         </div>
       </section>
 
       {/* Features Grid */}
-      <section className="py-24 bg-muted">
+      <section className="py-32 bg-card">
         <div className="container mx-auto px-6">
-          <div className="grid md:grid-cols-3 gap-12">
+          <div className="grid md:grid-cols-3 gap-16 max-w-6xl mx-auto">
             {/* Estate */}
-            <div className="text-center group cursor-pointer">
-              <Link to="/estate" className="block">
-                <div className="mb-6 flex justify-center">
-                  <div className="w-20 h-20 rounded-full bg-primary/10 flex items-center justify-center group-hover:bg-primary group-hover:scale-110 transition-smooth">
-                    <HomeIcon className="w-10 h-10 text-primary group-hover:text-primary-foreground" />
-                  </div>
+            <Link to="/estate" className="group">
+              <div className="text-center space-y-6">
+                <div className="mb-8 flex justify-center">
+                  <HomeIcon className="w-12 h-12 text-muted-foreground group-hover:text-accent transition-smooth" />
                 </div>
-                <h3 className="text-2xl mb-4 text-primary">The Estate</h3>
-                <p className="text-muted-foreground leading-relaxed">
-                  Discover the rich history and architectural grandeur of our centuries-old château, set within pristine vineyard landscapes.
+                <h3 className="text-2xl font-light tracking-wider uppercase text-foreground mb-4">The Estate</h3>
+                <div className="w-16 h-px bg-border mx-auto mb-6"></div>
+                <p className="text-muted-foreground leading-relaxed font-light">
+                  Discover the rich history and architectural grandeur of our centuries-old estate
                 </p>
-              </Link>
-            </div>
+              </div>
+            </Link>
 
             {/* Wines */}
-            <div className="text-center group cursor-pointer">
-              <Link to="/wines" className="block">
-                <div className="mb-6 flex justify-center">
-                  <div className="w-20 h-20 rounded-full bg-primary/10 flex items-center justify-center group-hover:bg-primary group-hover:scale-110 transition-smooth">
-                    <Wine className="w-10 h-10 text-primary group-hover:text-primary-foreground" />
-                  </div>
+            <Link to="/wines" className="group">
+              <div className="text-center space-y-6">
+                <div className="mb-8 flex justify-center">
+                  <Wine className="w-12 h-12 text-muted-foreground group-hover:text-accent transition-smooth" />
                 </div>
-                <h3 className="text-2xl mb-4 text-primary">Our Wines</h3>
-                <p className="text-muted-foreground leading-relaxed">
-                  Experience our exceptional collection of wines, crafted with dedication and expertise from our finest vineyard selections.
+                <h3 className="text-2xl font-light tracking-wider uppercase text-foreground mb-4">Our Wines</h3>
+                <div className="w-16 h-px bg-border mx-auto mb-6"></div>
+                <p className="text-muted-foreground leading-relaxed font-light">
+                  Experience our exceptional collection, crafted with dedication from our finest selections
                 </p>
-              </Link>
-            </div>
+              </div>
+            </Link>
 
             {/* Hospitality */}
-            <div className="text-center group cursor-pointer">
-              <Link to="/hospitality" className="block">
-                <div className="mb-6 flex justify-center">
-                  <div className="w-20 h-20 rounded-full bg-primary/10 flex items-center justify-center group-hover:bg-primary group-hover:scale-110 transition-smooth">
-                    <UtensilsCrossed className="w-10 h-10 text-primary group-hover:text-primary-foreground" />
-                  </div>
+            <Link to="/hospitality" className="group">
+              <div className="text-center space-y-6">
+                <div className="mb-8 flex justify-center">
+                  <UtensilsCrossed className="w-12 h-12 text-muted-foreground group-hover:text-accent transition-smooth" />
                 </div>
-                <h3 className="text-2xl mb-4 text-primary">Hospitality</h3>
-                <p className="text-muted-foreground leading-relaxed">
-                  Indulge in refined dining and luxurious accommodations that showcase the finest of French culinary and hospitality traditions.
+                <h3 className="text-2xl font-light tracking-wider uppercase text-foreground mb-4">Hospitality</h3>
+                <div className="w-16 h-px bg-border mx-auto mb-6"></div>
+                <p className="text-muted-foreground leading-relaxed font-light">
+                  Indulge in refined dining and luxurious accommodations in the heart of wine country
                 </p>
-              </Link>
-            </div>
+              </div>
+            </Link>
           </div>
         </div>
       </section>
 
       {/* Closing Statement */}
-      <section className="py-24 px-6">
-        <div className="container mx-auto max-w-3xl text-center">
-          <blockquote className="text-3xl italic text-primary mb-6">
-            "A symphony of tradition, elegance, and timeless beauty"
+      <section className="py-32 px-6">
+        <div className="container mx-auto max-w-4xl text-center">
+          <blockquote className="text-3xl md:text-4xl italic font-light text-foreground/70 mb-8 leading-relaxed">
+            "Every element speaks of heritage, every moment celebrates refinement"
           </blockquote>
-          <p className="text-muted-foreground">
-            — The Heritage of Château Braha
-          </p>
         </div>
       </section>
 

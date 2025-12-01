@@ -43,68 +43,67 @@ const Wines = () => {
       <PageHero
         image={winesImage}
         title="Our Wines"
-        subtitle="Expressions of Terroir and Tradition"
+        subtitle="Each vintage tells a story of sun, soil, and meticulous craft"
       />
 
       {/* Philosophy Section */}
-      <section className="py-24 px-6">
-        <div className="container mx-auto max-w-4xl text-center">
-          <h2 className="text-5xl mb-12 text-primary">Winemaking Philosophy</h2>
-          <p className="text-lg leading-relaxed text-muted-foreground mb-6">
+      <section className="py-32 px-6">
+        <div className="container mx-auto max-w-3xl text-center">
+          <h2 className="text-2xl uppercase tracking-widest mb-4 text-foreground font-light">Winemaking Philosophy</h2>
+          <div className="w-16 h-px bg-border mx-auto mb-12"></div>
+          <p className="text-lg leading-relaxed text-muted-foreground font-light mb-8">
             At Château Braha, winemaking is both an art and a science. We honor centuries-old traditions while embracing modern techniques that allow us to create wines of exceptional quality and character.
           </p>
-          <p className="text-lg leading-relaxed text-muted-foreground mb-6">
-            Our approach begins in the vineyard, where sustainable viticulture practices ensure healthy vines and optimal fruit quality. Hand-harvesting at peak ripeness, gentle handling, and precise cellar work allow the unique characteristics of our terroir to shine through in every bottle.
-          </p>
-          <p className="text-lg leading-relaxed text-muted-foreground">
+          <p className="text-lg leading-relaxed text-muted-foreground font-light">
             Each vintage tells the story of its year—the sunshine, the rain, the careful decisions made by our winemaking team. The result is a collection of wines that are authentic, elegant, and unmistakably Château Braha.
           </p>
         </div>
       </section>
 
       {/* Wine Collection */}
-      <section className="py-24 bg-muted">
+      <section className="py-32 bg-card">
         <div className="container mx-auto px-6">
-          <h2 className="text-5xl mb-16 text-center text-primary">Our Collection</h2>
+          <div className="text-center mb-20">
+            <h2 className="text-2xl uppercase tracking-widest text-foreground font-light">Our Collection</h2>
+            <div className="w-16 h-px bg-border mx-auto mt-4"></div>
+          </div>
           
-          <div className="grid md:grid-cols-2 gap-8 max-w-6xl mx-auto">
+          <div className="grid md:grid-cols-2 gap-12 max-w-5xl mx-auto">
             {wineCollection.map((wine, index) => (
-              <Card key={index} className="shadow-soft hover:shadow-elegant transition-smooth border-border">
-                <CardHeader>
-                  <CardTitle className="text-3xl text-primary">{wine.name}</CardTitle>
-                  <CardDescription className="text-lg text-accent">{wine.vintage}</CardDescription>
-                </CardHeader>
-                <CardContent className="space-y-4">
-                  <p className="text-muted-foreground leading-relaxed">
-                    {wine.description}
-                  </p>
+              <div key={index} className="border border-border/50 p-10 transition-smooth hover:border-border hover:shadow-soft">
+                <div className="mb-6">
+                  <h3 className="text-xl uppercase tracking-wider text-foreground font-light mb-2">{wine.name}</h3>
+                  <p className="text-sm text-accent uppercase tracking-widest">{wine.vintage}</p>
+                  <div className="w-12 h-px bg-border mt-4"></div>
+                </div>
+                <p className="text-muted-foreground leading-relaxed font-light mb-6">
+                  {wine.description}
+                </p>
+                <div className="space-y-3 text-sm">
                   <div>
-                    <h4 className="font-semibold text-foreground mb-2">Tasting Notes:</h4>
-                    <p className="text-sm text-muted-foreground">{wine.notes}</p>
+                    <span className="text-foreground/60 uppercase tracking-wider text-xs">Tasting Notes</span>
+                    <p className="text-muted-foreground font-light mt-1">{wine.notes}</p>
                   </div>
                   <div>
-                    <h4 className="font-semibold text-foreground mb-2">Food Pairing:</h4>
-                    <p className="text-sm text-muted-foreground">{wine.pairing}</p>
+                    <span className="text-foreground/60 uppercase tracking-wider text-xs">Food Pairing</span>
+                    <p className="text-muted-foreground font-light mt-1">{wine.pairing}</p>
                   </div>
-                </CardContent>
-              </Card>
+                </div>
+              </div>
             ))}
           </div>
         </div>
       </section>
 
       {/* Viticulture Section */}
-      <section className="py-24 px-6">
-        <div className="container mx-auto max-w-4xl">
-          <h2 className="text-5xl mb-12 text-center text-primary">Sustainable Viticulture</h2>
+      <section className="py-32 px-6">
+        <div className="container mx-auto max-w-3xl text-center">
+          <h2 className="text-2xl uppercase tracking-widest mb-4 text-foreground font-light">Sustainable Viticulture</h2>
+          <div className="w-16 h-px bg-border mx-auto mb-12"></div>
           
-          <div className="space-y-8 text-lg leading-relaxed text-muted-foreground">
+          <div className="space-y-8 text-lg leading-relaxed text-muted-foreground font-light">
             <p>
               Our commitment to excellence extends beyond the bottle to encompass environmental stewardship and sustainable farming practices. We believe that great wine can only come from healthy vineyards cultivated in harmony with nature.
-            </p>
-            
-            <p>
-              Throughout our 50 hectares, we employ integrated pest management, cover cropping, and minimal intervention techniques that promote biodiversity and soil health. Our vineyard team works closely with the land, observing and responding to the unique needs of each parcel.
             </p>
             
             <p>
