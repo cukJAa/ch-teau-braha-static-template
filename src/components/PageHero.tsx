@@ -10,7 +10,7 @@ interface PageHeroProps {
 
 const PageHero = ({ image, title, subtitle, children, overlay = true }: PageHeroProps) => {
   return (
-    <section className="relative h-[70vh] flex items-center justify-center overflow-hidden">
+    <section className="relative h-[85vh] flex items-center justify-center overflow-hidden">
       {/* Background Image */}
       <div 
         className="absolute inset-0 bg-cover bg-center"
@@ -20,12 +20,12 @@ const PageHero = ({ image, title, subtitle, children, overlay = true }: PageHero
       </div>
 
       {/* Content */}
-      <div className="relative z-10 text-center px-6 max-w-4xl mx-auto animate-fade-in">
-        <h1 className="text-6xl md:text-7xl lg:text-8xl mb-6 text-primary-foreground drop-shadow-lg">
+      <div className="relative z-10 text-center px-6 max-w-5xl mx-auto">
+        <h1 className="text-5xl md:text-6xl lg:text-7xl mb-8 text-primary-foreground font-light tracking-wider leading-tight">
           {title}
         </h1>
         {subtitle && (
-          <p className="text-xl md:text-2xl text-primary-foreground/90 font-light tracking-wide">
+          <p className="text-lg md:text-xl text-primary-foreground/80 font-light tracking-wide italic max-w-3xl mx-auto">
             {subtitle}
           </p>
         )}
