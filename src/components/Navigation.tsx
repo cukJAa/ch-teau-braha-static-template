@@ -32,8 +32,10 @@ const Navigation = () => {
         </div>
 
         {/* Centered Logo */}
-        <Link to="/" className="flex items-center transition-all duration-300 hover:opacity-80 flex-shrink-0">
-          <img src={logo} alt="Château Braha" className="h-16 md:h-20 w-auto opacity-100 border-4 border-solid border-card-foreground object-cover" />
+        <Link to="/" className="flex items-center transition-all duration-300 hover:opacity-90 flex-shrink-0">
+          <div className="bg-background p-2 rounded-sm shadow-md">
+            <img src={logo} alt="Château Braha" className="h-14 md:h-16 w-auto" />
+          </div>
         </Link>
 
         {/* Right Navigation - Desktop */}
