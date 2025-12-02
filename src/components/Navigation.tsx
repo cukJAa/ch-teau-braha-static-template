@@ -33,10 +33,7 @@ const Navigation = () => {
 
         {/* Login Button */}
         <div className="hidden md:block">
-          <Button variant="ghost" size="sm" className="text-sm uppercase tracking-widest text-muted-foreground hover:text-foreground transition-smooth">
-            <LogIn className="w-4 h-4 mr-2" />
-            Login
-          </Button>
+          
         </div>
 
         {/* Mobile Menu Button */}
