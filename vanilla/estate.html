@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>The Estate | Château Braha</title>
+  <meta name="description" content="Explore the historic Château Braha estate, featuring over 100 hectares of exceptional terroir in the heart of Bordeaux wine country.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Crimson+Pro:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <!-- Navigation -->
+  <header class="navbar">
+    <nav class="nav-container">
+      <div class="nav-links nav-left">
+        <a href="estate.html" class="nav-link">Estate</a>
+        <a href="history.html" class="nav-link">History</a>
+      </div>
+      <a href="index.html" class="logo-container">
+        <div class="logo-wrapper">
+          <img src="assets/braha-logo.png" alt="Château Braha" class="logo">
+        </div>
+      </a>
+      <div class="nav-links nav-right">
+        <a href="wines.html" class="nav-link">Wines</a>
+        <a href="hospitality.html" class="nav-link">Hospitality</a>
+      </div>
+      <button class="mobile-menu-btn" id="menuBtn" aria-label="Toggle menu">
+        <span class="menu-icon"></span>
+      </button>
+    </nav>
+    <div class="mobile-menu" id="mobileMenu">
+      <a href="estate.html" class="mobile-link">Estate</a>
+      <a href="history.html" class="mobile-link">History</a>
+      <a href="wines.html" class="mobile-link">Wines</a>
+      <a href="hospitality.html" class="mobile-link">Hospitality</a>
+    </div>
+  </header>
+
+  <main>
+    <!-- Page Hero -->
+    <section class="page-hero" style="background-image: url('assets/estate-hero.jpg');">
+      <div class="page-hero-overlay"></div>
+      <div class="page-hero-content">
+        <h1 class="page-hero-title">The Estate</h1>
+        <p class="page-hero-description">A living testament to centuries of viticultural excellence</p>
+      </div>
+    </section>
+
+    <!-- Content Sections -->
+    <section class="content-section">
+      <div class="container">
+        <div class="content-grid">
+          <div class="content-image">
+            <img src="assets/estate-hero.jpg" alt="Château Braha Vineyards">
+          </div>
+          <div class="content-text">
+            <p class="section-subtitle">The Vineyards</p>
+            <h3>100 Hectares of Excellence</h3>
+            <p>Our vineyards span over 100 hectares of carefully selected terroir, each parcel chosen for its unique characteristics and potential for producing exceptional wines.</p>
+            <p>The combination of gravelly soil, optimal sun exposure, and proximity to the Gironde estuary creates ideal conditions for cultivating the noble grape varieties that define our wines.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="content-section alt">
+      <div class="container">
+        <div class="content-grid reverse">
+          <div class="content-image">
+            <img src="assets/chateau-hero.jpg" alt="Château Braha Architecture">
+          </div>
+          <div class="content-text">
+            <p class="section-subtitle">The Château</p>
+            <h3>A Historic Masterpiece</h3>
+            <p>Built in the 18th century, Château Braha stands as an architectural jewel of the Médoc region. Its elegant façade and meticulously maintained gardens reflect the refinement and attention to detail that characterize everything we do.</p>
+            <p>The château has been carefully restored to preserve its historical significance while incorporating modern amenities for our guests.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="content-section">
+      <div class="container">
+        <div class="content-grid">
+          <div class="content-image">
+            <img src="assets/wines-hero.jpg" alt="Wine Cellars">
+          </div>
+          <div class="content-text">
+            <p class="section-subtitle">The Cellars</p>
+            <h3>Where Magic Happens</h3>
+            <p>Our underground cellars, carved from limestone, maintain perfect conditions for aging our wines. The constant temperature and humidity create an ideal environment for the slow, patient maturation that brings out the best in each vintage.</p>
+            <p>Visitors can explore these historic spaces during our guided tours, discovering the secrets behind our winemaking tradition.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Quote Section -->
+    <section class="quote-section">
+      <div class="container">
+        <blockquote class="quote">
+          "The land speaks through our wines, telling stories of sun, soil, and centuries of dedication."
+        </blockquote>
+        <cite class="quote-author">— The Braha Family</cite>
+      </div>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-content">
+        <div class="footer-brand">
+          <img src="assets/braha-logo.png" alt="Château Braha" class="footer-logo">
+          <p class="footer-tagline">A legacy of excellence since 1721</p>
+        </div>
+        <div class="footer-links">
+          <div class="footer-column">
+            <h4 class="footer-heading">Explore</h4>
+            <a href="estate.html">The Estate</a>
+            <a href="history.html">Our History</a>
+            <a href="wines.html">Our Wines</a>
+            <a href="hospitality.html">Hospitality</a>
+          </div>
+          <div class="footer-column">
+            <h4 class="footer-heading">Contact</h4>
+            <p>Château Braha</p>
+            <p>33250 Pauillac, France</p>
+            <p>contact@chateaubraha.com</p>
+          </div>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; 2024 Château Braha. All rights reserved.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
