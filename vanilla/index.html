@@ -50,13 +50,46 @@
 
   <!-- Hero Section -->
   <main>
-    <section class="hero">
-      <div class="hero-overlay"></div>
-      <div class="hero-content">
-        <p class="hero-subtitle">Welcome to</p>
-        <h1 class="hero-title">Château Braha</h1>
-        <p class="hero-description">A legacy of excellence in winemaking, gastronomy, and hospitality nestled in the heart of Bordeaux wine country.</p>
-        <a href="estate.html" class="btn btn-primary">Discover Our Estate</a>
+    <section class="hero hero-split">
+      <div class="hero-background">
+        <img src="assets/chateau-hero.jpg" alt="Château Braha Estate" class="hero-bg-image">
+        <div class="hero-overlay"></div>
+      </div>
+      
+      <!-- Left Side - Content -->
+      <div class="hero-content-side">
+        <div class="hero-content">
+          <p class="hero-subtitle">Welcome to</p>
+          <h1 class="hero-title">Château Braha</h1>
+          <p class="hero-description">A legacy of excellence in winemaking, gastronomy, and hospitality nestled in the heart of Bordeaux wine country.</p>
+          <a href="estate.html" class="btn btn-primary">Discover Our Estate</a>
+        </div>
+      </div>
+      
+      <!-- Right Side - Video -->
+      <div class="hero-video-side">
+        <div class="hero-video-wrapper">
+          <div class="hero-video-frame">
+            <video 
+              class="hero-video" 
+              autoplay 
+              muted 
+              loop 
+              playsinline
+              poster="assets/estate-hero.jpg"
+            >
+              <source src="assets/reelChatau.mp4" type="video/mp4">
+            </video>
+            <div class="hero-video-glow"></div>
+          </div>
+          <div class="hero-video-reflection"></div>
+        </div>
+      </div>
+      
+      <!-- Scroll indicator -->
+      <div class="scroll-indicator">
+        <span class="scroll-text">Scroll</span>
+        <div class="scroll-line"></div>
       </div>
     </section>
 
@@ -104,33 +137,6 @@
       </div>
     </section>
 
-    <!-- Video Showcase Section -->
-    <section class="section video-showcase-section">
-      <div class="container">
-        <p class="section-subtitle">Experience</p>
-        <h2 class="section-title">A Journey Through Our Estate</h2>
-        <p class="video-intro-text">Immerse yourself in the beauty and tradition of Château Braha</p>
-        
-        <div class="video-container">
-          <div class="video-frame">
-            <video 
-              class="showcase-video" 
-              autoplay 
-              muted 
-              loop 
-              playsinline
-              poster="assets/estate-hero.jpg"
-            >
-              <source src="assets/reelChatau.mp4" type="video/mp4">
-              Your browser does not support the video tag.
-            </video>
-            <div class="video-overlay"></div>
-          </div>
-          <div class="video-decoration video-decoration-top"></div>
-          <div class="video-decoration video-decoration-bottom"></div>
-        </div>
-      </div>
-    </section>
 
     <!-- Quote Section -->
     <section class="section quote-section">

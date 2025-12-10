@@ -250,62 +250,301 @@ h3 { font-size: clamp(1.5rem, 3vw, 2rem); }
   }
 }
 
-/* ===== Hero Section ===== */
+/* ===== Hero Section - Split Layout ===== */
 .hero {
   position: relative;
   height: 100vh;
-  min-height: 600px;
+  min-height: 700px;
   display: flex;
   align-items: center;
   justify-content: center;
-  background-image: url('assets/chateau-hero.jpg');
-  background-size: cover;
-  background-position: center;
-  background-attachment: fixed;
+  overflow: hidden;
+}
+
+.hero-split {
+  display: grid;
+  grid-template-columns: 1fr;
+}
+
+@media (min-width: 992px) {
+  .hero-split {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+/* Background layer */
+.hero-background {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+}
+
+.hero-bg-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  filter: blur(2px);
+  transform: scale(1.05);
 }
 
 .hero-overlay {
   position: absolute;
   inset: 0;
   background: linear-gradient(
-    to bottom,
-    rgba(0, 0, 0, 0.4),
-    rgba(0, 0, 0, 0.6)
+    135deg,
+    rgba(0, 0, 0, 0.7) 0%,
+    rgba(0, 0, 0, 0.5) 50%,
+    rgba(0, 0, 0, 0.6) 100%
   );
 }
 
-.hero-content {
+/* Left side - Content */
+.hero-content-side {
   position: relative;
-  z-index: 1;
+  z-index: 2;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 120px 2rem 80px;
+}
+
+@media (min-width: 992px) {
+  .hero-content-side {
+    padding: 0 4rem;
+    justify-content: flex-end;
+  }
+}
+
+.hero-content {
+  max-width: 500px;
   text-align: center;
   color: white;
-  padding: 0 1.5rem;
-  max-width: 800px;
-  animation: fadeInUp 1s ease-out;
+}
+
+@media (min-width: 992px) {
+  .hero-content {
+    text-align: left;
+  }
 }
 
 .hero-subtitle {
-  font-size: 1rem;
+  font-size: 0.875rem;
   text-transform: uppercase;
-  letter-spacing: 0.3em;
-  margin-bottom: 1rem;
-  opacity: 0.9;
+  letter-spacing: 0.4em;
+  margin-bottom: 1.5rem;
+  opacity: 0;
+  animation: fadeSlideUp 0.8s ease-out 0.2s forwards;
+  color: hsla(45, 30%, 96%, 0.9);
 }
 
 .hero-title {
   font-family: var(--font-serif);
-  font-size: clamp(3rem, 8vw, 5rem);
+  font-size: clamp(2.5rem, 6vw, 4.5rem);
   font-weight: 400;
   margin-bottom: 1.5rem;
   color: white;
+  line-height: 1.1;
+  opacity: 0;
+  animation: fadeSlideUp 0.8s ease-out 0.4s forwards;
 }
 
 .hero-description {
   font-size: 1.125rem;
-  max-width: 600px;
-  margin: 0 auto 2rem;
-  opacity: 0.9;
+  max-width: 450px;
+  margin: 0 auto 2.5rem;
+  opacity: 0;
+  animation: fadeSlideUp 0.8s ease-out 0.6s forwards;
   line-height: 1.8;
+  color: hsla(45, 30%, 96%, 0.85);
+}
+
+@media (min-width: 992px) {
+  .hero-description {
+    margin: 0 0 2.5rem;
+  }
+}
+
+.hero-content .btn {
+  opacity: 0;
+  animation: fadeSlideUp 0.8s ease-out 0.8s forwards;
+}
+
+/* Right side - Video */
+.hero-video-side {
+  position: relative;
+  z-index: 2;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 2rem;
+  display: none;
+}
+
+@media (min-width: 992px) {
+  .hero-video-side {
+    display: flex;
+    padding: 4rem;
+  }
+}
+
+.hero-video-wrapper {
+  position: relative;
+  perspective: 1500px;
+  opacity: 0;
+  animation: fadeZoomIn 1.2s cubic-bezier(0.23, 1, 0.32, 1) 0.5s forwards;
+}
+
+.hero-video-frame {
+  position: relative;
+  width: 280px;
+  border-radius: 20px;
+  overflow: hidden;
+  transform: rotateY(-8deg) rotateX(2deg);
+  transition: transform 0.8s cubic-bezier(0.23, 1, 0.32, 1);
+  box-shadow: 
+    0 50px 100px -20px rgba(0, 0, 0, 0.5),
+    0 30px 60px -30px rgba(0, 0, 0, 0.6),
+    inset 0 0 0 1px rgba(255, 255, 255, 0.1);
+}
+
+.hero-video-frame:hover {
+  transform: rotateY(-4deg) rotateX(1deg) translateY(-10px);
+}
+
+.hero-video {
+  width: 100%;
+  height: auto;
+  display: block;
+  aspect-ratio: 9 / 16;
+  object-fit: cover;
+}
+
+/* Video glow effect */
+.hero-video-glow {
+  position: absolute;
+  inset: -50%;
+  background: radial-gradient(
+    circle at center,
+    hsla(var(--color-primary), 0.15) 0%,
+    transparent 60%
+  );
+  pointer-events: none;
+  z-index: -1;
+  filter: blur(40px);
+  animation: pulseGlow 4s ease-in-out infinite;
+}
+
+/* Video reflection */
+.hero-video-reflection {
+  position: absolute;
+  bottom: -60%;
+  left: 0;
+  right: 0;
+  height: 60%;
+  background: linear-gradient(
+    to bottom,
+    rgba(255, 255, 255, 0.08) 0%,
+    transparent 50%
+  );
+  transform: rotateX(180deg) scaleY(0.3);
+  filter: blur(8px);
+  opacity: 0.5;
+  pointer-events: none;
+}
+
+/* Scroll indicator */
+.scroll-indicator {
+  position: absolute;
+  bottom: 2rem;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 10;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.5rem;
+  opacity: 0;
+  animation: fadeIn 1s ease-out 1.2s forwards;
+}
+
+.scroll-text {
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  letter-spacing: 0.2em;
+  color: hsla(45, 30%, 96%, 0.6);
+}
+
+.scroll-line {
+  width: 1px;
+  height: 40px;
+  background: linear-gradient(
+    to bottom,
+    hsla(45, 30%, 96%, 0.6),
+    transparent
+  );
+  animation: scrollBounce 2s ease-in-out infinite;
+}
+
+/* Hero animations */
+@keyframes fadeSlideUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeZoomIn {
+  from {
+    opacity: 0;
+    transform: scale(0.9) translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1) translateY(0);
+  }
+}
+
+@keyframes pulseGlow {
+  0%, 100% {
+    opacity: 0.5;
+    transform: scale(1);
+  }
+  50% {
+    opacity: 0.8;
+    transform: scale(1.1);
+  }
+}
+
+@keyframes scrollBounce {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(10px);
+  }
+}
+
+/* Mobile video - shown in a different position */
+@media (max-width: 991px) {
+  .hero-split {
+    padding-top: 80px;
+  }
+  
+  .hero-content-side {
+    padding-bottom: 40px;
+  }
+}
+
+/* Large screens */
+@media (min-width: 1200px) {
+  .hero-video-frame {
+    width: 320px;
+  }
 }
 
 /* ===== Buttons ===== */
@@ -705,126 +944,6 @@ h3 { font-size: clamp(1.5rem, 3vw, 2rem); }
   font-size: 0.875rem;
 }
 
-/* ===== Video Showcase Section ===== */
-.video-showcase-section {
-  background-color: hsl(var(--color-card));
-  text-align: center;
-  padding: 6rem 0;
-  overflow: hidden;
-}
-
-.video-intro-text {
-  max-width: 600px;
-  margin: 0 auto 3rem;
-  font-size: 1.125rem;
-  color: hsl(var(--color-muted-foreground));
-}
-
-.video-container {
-  position: relative;
-  max-width: 900px;
-  margin: 0 auto;
-}
-
-.video-frame {
-  position: relative;
-  border-radius: 16px;
-  overflow: hidden;
-  box-shadow: 
-    0 25px 50px -12px rgba(0, 0, 0, 0.25),
-    0 0 0 1px hsla(var(--color-border), 0.5);
-  transform: perspective(1000px) rotateX(2deg);
-  transition: transform 0.6s cubic-bezier(0.23, 1, 0.32, 1), 
-              box-shadow 0.6s cubic-bezier(0.23, 1, 0.32, 1);
-}
-
-.video-frame:hover {
-  transform: perspective(1000px) rotateX(0deg) translateY(-8px);
-  box-shadow: 
-    0 35px 60px -15px rgba(0, 0, 0, 0.3),
-    0 0 0 1px hsla(var(--color-border), 0.5);
-}
-
-.showcase-video {
-  width: 100%;
-  height: auto;
-  display: block;
-  aspect-ratio: 9 / 16;
-  object-fit: cover;
-  max-height: 600px;
-}
-
-@media (min-width: 768px) {
-  .showcase-video {
-    aspect-ratio: 16 / 9;
-    max-height: none;
-  }
-}
-
-.video-overlay {
-  position: absolute;
-  inset: 0;
-  background: linear-gradient(
-    135deg,
-    rgba(255, 255, 255, 0.1) 0%,
-    transparent 50%,
-    rgba(0, 0, 0, 0.1) 100%
-  );
-  pointer-events: none;
-}
-
-/* Video decorative elements */
-.video-decoration {
-  position: absolute;
-  left: 50%;
-  transform: translateX(-50%);
-  width: 60%;
-  height: 1px;
-  background: linear-gradient(
-    90deg,
-    transparent,
-    hsl(var(--color-primary)),
-    transparent
-  );
-  opacity: 0.5;
-}
-
-.video-decoration-top {
-  top: -30px;
-}
-
-.video-decoration-bottom {
-  bottom: -30px;
-}
-
-/* Shimmer animation on video frame */
-.video-frame::before {
-  content: '';
-  position: absolute;
-  inset: 0;
-  background: linear-gradient(
-    120deg,
-    transparent 30%,
-    rgba(255, 255, 255, 0.15) 50%,
-    transparent 70%
-  );
-  transform: translateX(-100%);
-  z-index: 2;
-  pointer-events: none;
-}
-
-.video-frame:hover::before {
-  animation: shimmer 1.5s ease-in-out;
-}
-
-@keyframes shimmer {
-  0% {
-    transform: translateX(-100%);
-  }
-  100% {
-    transform: translateX(100%);
-  }
-}
 
 /* ===== Animations ===== */
 @keyframes fadeInUp {
